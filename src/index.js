@@ -1,5 +1,3 @@
-import "./style.css";
+import './style.css';
 
-console.log("test");
-const body = document.querySelector("body");
-body.style.backgroundColor = "black";
+// https://openweathermap.org/ Weather API
