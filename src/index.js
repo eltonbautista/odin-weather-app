@@ -2,11 +2,14 @@ import './style.css';
 // import { fetchLocation } from './modules/fetch-location';
 // fetchLocation('London');
 import { fetchWeatherConditions } from './modules/async-fetch-weather-data';
-import { requiredWeatherPropertiesFactoryFunction } from './modules/factory-function-required-properties';
-// fetchWeatherConditions('Calgary');
+import { requiredWeatherPropertiesFactoryFunction } from './modules/async-factory-function-required-properties';
+import { searchboxToWeather } from './modules/searchbox-to-weather';
+// // fetchWeatherConditions('Calgary');
 
-async function foo() {
-  const calgary = await requiredWeatherPropertiesFactoryFunction('Calgary');
-  console.log(calgary);
-}
-foo();
+// async function foo() {
+//   const calgary = await requiredWeatherPropertiesFactoryFunction('Calgary');
+//   console.log(calgary);
+// }
+// foo();
+
+searchboxToWeather();
