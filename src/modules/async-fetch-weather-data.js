@@ -1,11 +1,11 @@
-import { fetchLocation } from './fetch-location';
+import { fetchLocation } from './async-fetch-location';
 export const fetchWeatherConditions = async function fetchWeatherConditions(
   city
 ) {
   try {
+    // Use returned object of fetchLocation(city) to setup the responseWeatherAPI fetch because lon and lat are needed parameters.
     const dataOfGeocodingAPI = await fetchLocation(city);
-    // commented out for now so I can use 'Calgary' as my test city for the weather API. Will need to use parameters for search form later on.
-    //   const dataOfGeocodingAPI = await fetchLocation('Calgary');
+
     const longitudeOfCity = dataOfGeocodingAPI.lon;
     const latitudeOfCity = dataOfGeocodingAPI.lat;
     const nameOfCity = dataOfGeocodingAPI.name;
@@ -29,7 +29,8 @@ export const fetchWeatherConditions = async function fetchWeatherConditions(
       { mode: 'cors' }
     );
     const dataWeatherAPI = await responseWeatherAPI.json();
-    console.log(dataWeatherAPI);
+    // console.log(dataWeatherAPI);
+    return dataWeatherAPI;
   } catch (err) {
     console.log(err);
   }
