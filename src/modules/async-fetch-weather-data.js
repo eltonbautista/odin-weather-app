@@ -25,7 +25,7 @@ export const fetchWeatherConditions = async function fetchWeatherConditions(
     //     });
 
     const responseWeatherAPI = await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitudeOfCity}&lon=${longitudeOfCity}&exclude={part}&appid=d0fb988627c0d201253cf73bc57e0cef`,
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitudeOfCity}&lon=${longitudeOfCity}&exclude={part}&units=metric&appid=d0fb988627c0d201253cf73bc57e0cef`,
       { mode: 'cors' }
     );
     const dataWeatherAPI = await responseWeatherAPI.json();

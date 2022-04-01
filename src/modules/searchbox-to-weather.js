@@ -1,21 +1,19 @@
 import { requiredWeatherPropertiesFactoryFunction } from './async-factory-function-required-properties';
-
+import { renderCurrentConditions } from './dynamic-ui';
 export const searchboxToWeather = function searchboxToWeather() {
   // create appropriate divs
   const mainContent = document.querySelector('#main-content');
-  const formDiv = document.createElement('div');
+  const searchboxDiv = document.querySelector('.searchbox-div');
   const form = document.createElement('form');
   const searchbox = document.createElement('input');
   const submitButton = document.createElement('input');
 
-  formDiv.setAttribute('class', 'form-div');
   searchbox.setAttribute('type', 'searchbox');
   submitButton.setAttribute('type', 'submit');
 
   submitButton.textContent = 'submit';
 
-  mainContent.append(formDiv);
-  formDiv.append(form);
+  searchboxDiv.append(form);
   form.append(searchbox);
   form.append(submitButton);
 
@@ -28,6 +26,7 @@ export const searchboxToWeather = function searchboxToWeather() {
       searchboxValue
     );
     console.log(myWeatherObject);
+    renderCurrentConditions(myWeatherObject.currentForecast.weather[0].main);
   });
 
   // to have myWeatherObject properties properly display onto the page UI, why don't I just pass down each of those properties through
