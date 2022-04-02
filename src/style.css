@@ -44,5 +44,38 @@
       justify-self: center;
       background-color: aqua;
       border-radius: 100px;
-      grid-template-rows: 0.1fr 1fr 0.7fr;
+      grid-template-rows: 0.1fr 0.5fr 0.7fr;
+  }
+
+  #main-content > div {
+    display: grid;
+  }
+
+/* CURRENT CONDITIONS */
+
+  .current-conditions-div {
+    background-color: red;
+    width: 17%;
+    font-size: 16px;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    gap: -50px;
+    border-radius: 60px;
+    gap: 5px;
+  }
+  .current-conditions-div > span:nth-child(1) {
+  font-size: 30px;
+  } 
+
+  .current-conditions-div > span {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* WEEKLY FORECAST */
+
+  .weekly-forecast-div {
+    grid-auto-flow: column;
   }

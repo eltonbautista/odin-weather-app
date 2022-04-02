@@ -1,4 +1,4 @@
-export const renderCurrentConditions = function renderCurrentConditions(
+export const createCurrentConditions = function createCurrentConditions(
   currentCondition,
   city,
   currentTemp,
@@ -98,4 +98,31 @@ export const renderCurrentConditions = function renderCurrentConditions(
   // feelsLikeSpan.textContent = feelsLike;
   // humiditySpan.textContent = humidity;
   // windSpeedSpan.textContent = windSpeed;
+};
+
+export const displayCurrentConditions = function displayCurrentConditions(
+  myWeatherObject
+) {
+  const currentCondition =
+    myWeatherObject.currentForecast.weather[0].description;
+  const city = myWeatherObject.nameOfCity;
+  const currentTemp = Math.round(myWeatherObject.currentForecast.temp) + '°C';
+  const feelsLike =
+    'Feels Like: ' +
+    Math.round(myWeatherObject.currentForecast.feels_like) +
+    '°C';
+
+  const humidity =
+    'Humidity: ' + Math.floor(myWeatherObject.currentForecast.humidity) + '%';
+  const windSpeed = `Wind Speed: ${myWeatherObject.currentForecast.wind_speed} km/h`;
+
+  // might make current condition and seven day forecast two different objects so I can reuse these names.
+  createCurrentConditions(
+    currentCondition,
+    city,
+    currentTemp,
+    feelsLike,
+    humidity,
+    windSpeed
+  );
 };

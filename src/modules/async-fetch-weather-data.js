@@ -30,6 +30,7 @@ export const fetchWeatherConditions = async function fetchWeatherConditions(
     );
     const dataWeatherAPI = await responseWeatherAPI.json();
     // console.log(dataWeatherAPI);
+    console.log(dataWeatherAPI);
     return dataWeatherAPI;
   } catch (err) {
     console.log(err);

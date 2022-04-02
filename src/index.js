@@ -4,7 +4,8 @@ import './style.css';
 import { fetchWeatherConditions } from './modules/async-fetch-weather-data';
 import { requiredWeatherPropertiesFactoryFunction } from './modules/async-factory-function-required-properties';
 import { searchboxToWeather } from './modules/searchbox-to-weather';
-import { renderCurrentConditions } from './modules/dynamic-ui';
+import { renderCurrentConditions } from './modules/dynamic-ui-current-conditions';
+import { renderWeeklyForecast } from './modules/dynamic-ui-weekly-forecast';
 // // fetchWeatherConditions('Calgary');
 
 // async function foo() {
