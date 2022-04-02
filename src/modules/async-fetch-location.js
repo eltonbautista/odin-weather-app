@@ -7,7 +7,7 @@ export const fetchLocation = async function fetchLocation(city) {
       { mode: 'cors' }
     );
     const dataGeocodingAPI = await responseGeocodingAPI.json();
-
+    console.log(dataGeocodingAPI);
     return dataGeocodingAPI[0];
   } catch (error) {
     console.log(error);

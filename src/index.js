@@ -6,8 +6,10 @@ import { requiredWeatherPropertiesFactoryFunction } from './modules/async-factor
 import { searchboxToWeather } from './modules/searchbox-to-weather';
 import { renderCurrentConditions } from './modules/dynamic-ui-current-conditions';
 import { renderWeeklyForecast } from './modules/dynamic-ui-weekly-forecast';
+import { timeAndDate } from './modules/async-fetch-time-date';
 
 const currentConditionsDiv = document.querySelector('.current-conditions-div');
 const weeklyForecastDiv = document.querySelector('.weekly-forecast-div');
 
 searchboxToWeather(currentConditionsDiv, weeklyForecastDiv);
+// timeAndDate();

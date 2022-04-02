@@ -1,6 +1,7 @@
 export const createCurrentConditions = function createCurrentConditions(
   currentCondition,
   city,
+  currentTime,
   currentTemp,
   feelsLike,
   humidity,
@@ -63,7 +64,7 @@ export const createCurrentConditions = function createCurrentConditions(
     currentCondition,
     city,
     getDate(),
-    getTime(),
+    currentTime,
     currentTemp,
     feelsLike,
     humidity,
@@ -106,6 +107,7 @@ export const displayCurrentConditions = function displayCurrentConditions(
   const currentCondition =
     myWeatherObject.currentForecast.weather[0].description;
   const city = myWeatherObject.nameOfCity;
+  const currentTime = myWeatherObject.timeAndDateOfCountry.time;
   const currentTemp = Math.round(myWeatherObject.currentForecast.temp) + '°C';
   const feelsLike =
     'Feels Like: ' +
@@ -120,6 +122,7 @@ export const displayCurrentConditions = function displayCurrentConditions(
   createCurrentConditions(
     currentCondition,
     city,
+    currentTime,
     currentTemp,
     feelsLike,
     humidity,
