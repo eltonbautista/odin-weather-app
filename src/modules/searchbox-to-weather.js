@@ -38,6 +38,8 @@ export const searchboxToWeather = function searchboxToWeather(
 
     displayCurrentConditions(myWeatherObject);
     displayWeeklyForecast(myWeatherObject);
+
+    localStorage.setItem('city', JSON.stringify(myWeatherObject));
   });
 
   // to have myWeatherObject properties properly display onto the page UI, why don't I just pass down each of those properties through

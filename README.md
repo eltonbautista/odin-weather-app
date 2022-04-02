@@ -5,3 +5,9 @@ APIs used:
 
 1. Geocoding: https://openweathermap.org/api/geocoding-api
 2. One-Call-API (OpenWeatherMap Free API): https://openweathermap.org/api/one-call-api
+3. https://www.timeapi.io/swagger/index.html
+
+Assets used:
+
+1. Background image: https://unsplash.com/photos/KL9IanHzSE4?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+2. Font: https://fonts.google.com/specimen/Quicksand#standard-styles

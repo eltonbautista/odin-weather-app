@@ -1,6 +1,7 @@
 export const createCurrentConditions = function createCurrentConditions(
   currentCondition,
   city,
+  currentDate,
   currentTime,
   currentTemp,
   feelsLike,
@@ -63,7 +64,7 @@ export const createCurrentConditions = function createCurrentConditions(
   const elementTextContent = [
     currentCondition,
     city,
-    getDate(),
+    currentDate,
     currentTime,
     currentTemp,
     feelsLike,
@@ -90,16 +91,9 @@ export const createCurrentConditions = function createCurrentConditions(
     humiditySpan,
     windSpeedSpan,
   ] = elementArray;
-
-  // currentConditionsSpan.textContent = currentCondition;
-  // citySpan.textContent = city;
-  // dateSpan.textContent = getDate();
-  // currentTimeSpan.textContent = getTime();
-  // currentTempSpan.textContent = currentTemp;
-  // feelsLikeSpan.textContent = feelsLike;
-  // humiditySpan.textContent = humidity;
-  // windSpeedSpan.textContent = windSpeed;
 };
+
+// A function that I pass onto searchbox-to-weather.js to display the current conditions.
 
 export const displayCurrentConditions = function displayCurrentConditions(
   myWeatherObject
@@ -107,6 +101,10 @@ export const displayCurrentConditions = function displayCurrentConditions(
   const currentCondition =
     myWeatherObject.currentForecast.weather[0].description;
   const city = myWeatherObject.nameOfCity;
+  const currentDate =
+    myWeatherObject.timeAndDateOfCountry.dayOfWeek +
+    ', ' +
+    myWeatherObject.timeAndDateOfCountry.date;
   const currentTime = myWeatherObject.timeAndDateOfCountry.time;
   const currentTemp = Math.round(myWeatherObject.currentForecast.temp) + '°C';
   const feelsLike =
@@ -122,6 +120,7 @@ export const displayCurrentConditions = function displayCurrentConditions(
   createCurrentConditions(
     currentCondition,
     city,
+    currentDate,
     currentTime,
     currentTemp,
     feelsLike,
