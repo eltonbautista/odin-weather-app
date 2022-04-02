@@ -51,6 +51,13 @@
     display: grid;
   }
 
+/* SEARCHBAR */
+.searchbox-div {
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* CURRENT CONDITIONS */
 
   .current-conditions-div {
@@ -78,4 +85,13 @@
 
   .weekly-forecast-div {
     grid-auto-flow: column;
+  }
+
+  .weekly-forecast-div > div {
+    display: grid;
+    height: 30%;
+    font-size: 22px;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
   }

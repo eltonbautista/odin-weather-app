@@ -1,6 +1,6 @@
 import { weeklyForecastFactoryFunction } from './factory-function-weekly-forecast';
 
-export const renderDailyForecast = function renderDailyForecast(
+export const createWeeklyForecast = function createWeeklyForecast(
   nameOfDay,
   tempOfDay,
   feelsLikeOfDay,
@@ -24,4 +24,27 @@ export const renderDailyForecast = function renderDailyForecast(
 
   day.setAttribute('class', `day-div ${nameOfDay}`);
   weeklyForecastDiv.append(day);
+};
+
+export const displayWeeklyForecast = function displayWeeklyForecast(
+  myWeatherObject
+) {
+  const nameOfDays = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
+  for (let i = 0; i < 7; i += 1) {
+    createWeeklyForecast(
+      nameOfDays[i],
+      Math.round(myWeatherObject.sevenDayForecast[i].temp.day) + '°C',
+      Math.round(myWeatherObject.sevenDayForecast[i].feels_like.day) + '°C',
+      myWeatherObject.sevenDayForecast[i].weather[0].description
+    );
+  }
 };

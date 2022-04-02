@@ -6,12 +6,8 @@ import { requiredWeatherPropertiesFactoryFunction } from './modules/async-factor
 import { searchboxToWeather } from './modules/searchbox-to-weather';
 import { renderCurrentConditions } from './modules/dynamic-ui-current-conditions';
 import { renderWeeklyForecast } from './modules/dynamic-ui-weekly-forecast';
-// // fetchWeatherConditions('Calgary');
 
-// async function foo() {
-//   const calgary = await requiredWeatherPropertiesFactoryFunction('Calgary');
-//   console.log(calgary);
-// }
-// foo();
+const currentConditionsDiv = document.querySelector('.current-conditions-div');
+const weeklyForecastDiv = document.querySelector('.weekly-forecast-div');
 
-searchboxToWeather();
+searchboxToWeather(currentConditionsDiv, weeklyForecastDiv);
