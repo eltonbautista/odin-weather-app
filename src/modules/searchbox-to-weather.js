@@ -13,11 +13,18 @@ export const searchboxToWeather = function searchboxToWeather(
   const searchbox = document.createElement('input');
   const submitButton = document.createElement('input');
 
-  searchbox.setAttribute('type', 'searchbox');
+  searchbox.setAttribute('type', 'search');
   submitButton.setAttribute('type', 'submit');
 
   submitButton.textContent = 'submit';
   searchbox.setAttribute('placeholder', 'Search a city..');
+  searchbox.setAttribute('required', true);
+  searchbox.setAttribute(
+    'oninvalid',
+    "this.setCustomValidity('Please enter a valid city')"
+  );
+  searchbox.setAttribute('oninput', "this.setCustomValidity('')");
+  searchbox.setAttribute('pattern', '^[A-Za-z ]+$');
 
   searchboxDiv.append(form);
   form.append(searchbox);
