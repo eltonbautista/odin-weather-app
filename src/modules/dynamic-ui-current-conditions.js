@@ -42,7 +42,6 @@ export const createCurrentConditions = function createCurrentConditions(
     let date;
     let month = months[today.getMonth()];
     let day = days[today.getDate()];
-    console.log(month);
     return (date =
       day +
       ',' +
@@ -102,10 +101,14 @@ export const displayCurrentConditions = function displayCurrentConditions(
     myWeatherObject.currentForecast.weather[0].description;
   const city = myWeatherObject.nameOfCity;
   const currentDate =
-    myWeatherObject.timeAndDateOfCountry.dayOfWeek +
+    myWeatherObject.timeAndDateOfCountry.data.datetime.day_full +
     ', ' +
-    myWeatherObject.timeAndDateOfCountry.date;
-  const currentTime = myWeatherObject.timeAndDateOfCountry.time;
+    myWeatherObject.timeAndDateOfCountry.data.datetime.month_full +
+    ' ' +
+    myWeatherObject.timeAndDateOfCountry.data.datetime.day +
+    ' ' +
+    myWeatherObject.timeAndDateOfCountry.data.datetime.year;
+  const currentTime = myWeatherObject.timeAndDateOfCountry.data.datetime.time;
   const currentTemp = Math.round(myWeatherObject.currentForecast.temp) + '°C';
   const feelsLike =
     'Feels Like: ' +

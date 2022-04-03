@@ -46,6 +46,7 @@
       font-weight: 600;
       /* background-image: url(./assets/josh-kahen-KL9IanHzSE4-unsplash.jpg); */
       background: black;
+      min-width: fit-content;
   }
 
   #main-content {
@@ -59,6 +60,8 @@
       background-image: url(./assets/josh-kahen-KL9IanHzSE4-unsplash.jpg);
       border: 2px solid wheat;
       box-shadow: -10px 10px 10px rgba(245, 222, 179, 0.575);
+      min-width: fit-content;
+      min-height: fit-content;
   }
 
   #main-content > div {
@@ -70,19 +73,40 @@
 .searchbox-div {
   justify-content: center;
   align-items: center;
+  min-width: fit-content;
+  min-height: fit-content;
 }
-
+.searchbox-div > form {
+  min-width: 1%;
+}
 #main-content > div.searchbox-div > form > input[type=submit]:nth-child(2) {
   background-color: black;
   color: white;
+  min-width: 5vw;
+  font-size: max(14px, 1.9vmin);
+  margin-left: 10px;
 }
+
+#main-content > div.searchbox-div > form > input[type=search]:nth-child(1) {
+  min-width: 20%;
+  width: 52%;
+  min-height: 2.2vh;
+  font-size: max(14px, 2vmin);
+  background-color: rgba(231, 224, 224, 0);
+  color: white;
+}
+
+#main-content > div.searchbox-div > form > input[type=search]:nth-child(1)::placeholder {
+  color: white;
+}
+
 
 /* CURRENT CONDITIONS */
 
   .current-conditions-div {
     background-color: rgba(248, 9, 9, 0.267);
     width: 17%;
-    font-size: 16px;
+    font-size: 1.7vmin;
     justify-self: center;
     align-content: center;
     justify-content: center;
@@ -91,7 +115,9 @@
     border: 2px solid wheat;
     gap: 5px;
     color: white;
-    padding: 0;
+    padding: 15px;
+    min-width: fit-content;
+    min-height: fit-content;
   }
   .current-conditions-div > span:nth-child(1) {
   font-size: 30px;
@@ -111,19 +137,21 @@
 
   .weekly-forecast-div > div {
     display: grid;
-    height: 40%;
-    margin-bottom: 10px;
-    font-size: 20px;
     align-self: center;
     justify-content: center;
     justify-self: center;
     justify-items: center;
-    /* background-color: rgba(0, 0, 0, 0.719); */
+    margin-bottom: 10px;
+
+    font-size: 2vmin ;
     color: white;
     border: 2px solid wheat;
     border-radius: 10px;
     padding: 10px 5px 10px 10px;
-    min-width: 90%;
+    height: 40%;
+    width: 90%;
+    min-width: 50%;
+    min-height: 50%;
   }
 
   .weekly-forecast-div > div > span:nth-child(3)::before {

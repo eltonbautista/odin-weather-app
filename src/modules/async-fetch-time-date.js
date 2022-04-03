@@ -5,9 +5,11 @@ export const timeAndDate = async function timeAndDate(location) {
 
     const responseTimeAndDate = await fetch(
       `
-      https://cors-anywhere.herokuapp.com/https://www.timeapi.io/api/Time/current/zone?timeZone=${weatherOfCity.timezone}
+      https://timezoneapi.io/api/timezone/?${weatherOfCity.timezone}&token=ahIrLoPNyzpsONTLdmOI
 `,
-      { mode: 'cors' }
+      {
+        mode: 'cors',
+      }
     );
 
     const dataTimeAndDate = await responseTimeAndDate.json();

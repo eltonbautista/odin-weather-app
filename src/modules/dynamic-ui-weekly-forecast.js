@@ -1,4 +1,4 @@
-import { weeklyForecastFactoryFunction } from './factory-function-weekly-forecast';
+//Write the function for creating weekly divs, and displaying them. These are to be passed onto searchbox-to-weather.js
 
 export const createWeeklyForecast = function createWeeklyForecast(
   nameOfDay,

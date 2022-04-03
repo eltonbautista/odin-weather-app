@@ -17,7 +17,7 @@ export const searchboxToWeather = function searchboxToWeather(
   submitButton.setAttribute('type', 'submit');
 
   submitButton.textContent = 'submit';
-  searchbox.setAttribute('placeholder', 'Search a city..');
+  searchbox.setAttribute('placeholder', 'Search for a city..');
   searchbox.setAttribute('required', true);
   searchbox.setAttribute(
     'oninvalid',
@@ -31,21 +31,20 @@ export const searchboxToWeather = function searchboxToWeather(
   form.append(submitButton);
 
   // add an event listener onto the form, the function passed needs to be asynchronous to get the correct value.
-
+  // Where the bulk of rendering items on the browser happens.
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const searchboxValue = searchbox.value;
     const myWeatherObject = await requiredWeatherPropertiesFactoryFunction(
       searchboxValue
     );
-    console.log(myWeatherObject);
 
     currentConditionsDiv.textContent = '';
     weeklyForecastDiv.textContent = '';
 
     displayCurrentConditions(myWeatherObject);
     displayWeeklyForecast(myWeatherObject);
-
+    // Set local storage when user submits city. This will be used to load up the same city when they reload page.
     localStorage.setItem('city', JSON.stringify(myWeatherObject));
   });
 

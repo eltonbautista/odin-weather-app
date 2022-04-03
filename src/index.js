@@ -6,4 +6,17 @@ const currentConditionsDiv = document.querySelector('.current-conditions-div');
 const weeklyForecastDiv = document.querySelector('.weekly-forecast-div');
 
 searchboxToWeather(currentConditionsDiv, weeklyForecastDiv);
-window.onload = onLoadDisplay();
+
+const localWeatherData = JSON.parse(localStorage.getItem('city'));
+
+const loadLS = (function loadLocalWeatherData() {
+  try {
+    if (localWeatherData !== 'null' || localWeatherData !== 'undefined') {
+      window.onload = onLoadDisplay();
+    } else {
+      return;
+    }
+  } catch (err) {
+    return;
+  }
+})();

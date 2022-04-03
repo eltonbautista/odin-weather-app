@@ -5,9 +5,13 @@ import { timeAndDate } from './async-fetch-time-date';
 export const requiredWeatherPropertiesFactoryFunction =
   async function requiredWeatherPropertiesFactoryFunction(city) {
     try {
+      // Grab necessary objects via Promises.
+
       const weatherObject = await fetchWeatherConditions(city);
       const locationObject = await fetchLocation(city);
       const timeAndDateObject = await timeAndDate(city);
+
+      //Return only the necessary properties for my project.
 
       const sevenDayForecast = weatherObject.daily;
       const currentForecast = weatherObject.current;
